@@ -13,7 +13,7 @@ pipeline {
             cobertura()
           }
         }
-        stage('') {
+        stage('findbugs') {
           steps {
             findbugs(canComputeNew: true)
           }
