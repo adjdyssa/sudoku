@@ -8,7 +8,7 @@ pipeline {
     }
     stage('testcobertura') {
       steps {
-        cobertura(autoUpdateHealth: true, autoUpdateStability: true, lineCoverageTargets: 'info')
+        cobertura(autoUpdateHealth: true, autoUpdateStability: true, lineCoverageTargets: 'info', fileCoverageTargets: 'info', zoomCoverageChart: true)
       }
     }
   }
