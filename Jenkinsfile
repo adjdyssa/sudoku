@@ -15,7 +15,7 @@ pipeline {
         }
         stage('findbugs') {
           steps {
-            findbugs(canComputeNew: true)
+            findbugs(canComputeNew: true, canResolveRelativePaths: true)
           }
         }
       }
