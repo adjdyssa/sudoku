@@ -7,8 +7,17 @@ pipeline {
       }
     }
     stage('testcobertura') {
-      steps {
-        cobertura()
+      parallel {
+        stage('testcobertura') {
+          steps {
+            cobertura()
+          }
+        }
+        stage('') {
+          steps {
+            findbugs(canComputeNew: true)
+          }
+        }
       }
     }
     stage('error') {
