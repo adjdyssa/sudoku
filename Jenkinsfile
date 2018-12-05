@@ -11,5 +11,10 @@ pipeline {
         cobertura(autoUpdateHealth: true, autoUpdateStability: true, lineCoverageTargets: 'info', fileCoverageTargets: 'info', zoomCoverageChart: true)
       }
     }
+    stage('') {
+      steps {
+        publishCoverage(failNoReports: true)
+      }
+    }
   }
 }
