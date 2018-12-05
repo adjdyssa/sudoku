@@ -8,7 +8,7 @@ pipeline {
     }
     stage('testcobertura') {
       steps {
-        cobertura(coberturaReportFile: 'Cobertura xml')
+        cobertura(coberturaReportFile: 'index.html')
       }
     }
     stage('error') {
