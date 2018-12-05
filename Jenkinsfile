@@ -8,7 +8,7 @@ pipeline {
     }
     stage('testcobertura') {
       steps {
-        cobertura(coberturaReportFile: '\\target\\site\\coberturaindex.html')
+        cobertura()
       }
     }
     stage('error') {
