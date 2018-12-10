@@ -10,7 +10,7 @@ pipeline {
       parallel {
         stage('testcobertura') {
           steps {
-            cobertura(coberturaReportFile: 'coverage.xml')
+            cobertura()
           }
         }
         stage('findbugs') {
