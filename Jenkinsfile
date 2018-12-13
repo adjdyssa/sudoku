@@ -10,7 +10,6 @@ pipeline {
       parallel {
         stage('testcobertura') {
           steps {
-            cobertura()
             jacoco(buildOverBuild: true)
           }
         }
