@@ -11,6 +11,7 @@ pipeline {
         stage('testcobertura') {
           steps {
             cobertura()
+            jacoco(buildOverBuild: true)
           }
         }
         stage('findbugs') {
