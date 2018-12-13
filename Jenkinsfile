@@ -14,6 +14,7 @@ pipeline {
     stage('rapport cobertura') {
       steps {
         jacoco(buildOverBuild: true)
+        cobertura(autoUpdateHealth: true)
       }
     }
   }
