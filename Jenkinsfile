@@ -23,6 +23,7 @@ pipeline {
     stage('error') {
       steps {
         publishCoverage(failNoReports: true)
+        jacoco(buildOverBuild: true)
       }
     }
   }
