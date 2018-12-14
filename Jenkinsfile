@@ -1,9 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('checkstyle') {
       steps {
         checkstyle(canComputeNew: true)
+      }
+    }
+    stage('cobertura') {
+      steps {
+        cobertura(autoUpdateHealth: true)
       }
     }
   }
