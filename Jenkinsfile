@@ -17,7 +17,7 @@ pipeline {
     }
     stage('cobertura') {
       steps {
-        cobertura(autoUpdateHealth: true)
+        cobertura()
       }
     }
   }
