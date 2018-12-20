@@ -54,19 +54,19 @@ public class GrilleImplTest {
         GrilleImpl instance = new GrilleImpl(GRID_TO_SOLVE);
         int expResult = 9;
         int result = instance.getDimension();
+        
         assertEquals(expResult, result);
         
     }
 
+  
     /**
-     * Test de la methode testsetvalue GrilleImpl.
-     */
-    @Test
+    * Teste la méthode setValue().
+    */
+  @Test(expected = IllegalArgumentException.class)
     public void testSetValue() {
-        System.out.println("setValue");
         
-        
-         char[][] GRID_TO_SOLVE = {
+          char[][] GRID_TO_SOLVE = {
 			{'9','0','0','1','0','0','0','0','5'},
                         {'0','0','5','0','9','0','2','0','1'},
                         {'8','0','0','0','4','0','0','0','0'},
@@ -77,20 +77,14 @@ public class GrilleImplTest {
                         {'0','0','0','2','0','0','9','0','0'},
                         {'0','0','1','9','0','4','5','7','0'},
 	};
-       
-          
-        GrilleImpl instance = new GrilleImpl(GRID_TO_SOLVE);
         
         
-        
-        int x = 0;
-        int y = 0;
-        char value = '2';
-       
-    instance.setValue(x, y, value);
-         
+        GrilleImpl g = new GrilleImpl(GRID_TO_SOLVE);
+        g.setValue(1, 3, '3'); //correct
+        // g.setValue(1, 3, 'h'); //exception
+        //g.setValue(1, 20, 'a'); //exception
+        //g.setValue(10, 3, '5'); //exception
     }
-
     /**
      * Test de la methode getValue de la class GrilleImpl.
      */
