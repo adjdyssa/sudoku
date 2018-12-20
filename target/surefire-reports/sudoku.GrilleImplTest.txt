@@ -1,4 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: sudoku.GrilleImplTest
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.347 s - in sudoku.GrilleImplTest
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.117 s <<< FAILURE! - in sudoku.GrilleImplTest
+testSetValue(sudoku.GrilleImplTest)  Time elapsed: 0.008 s  <<< FAILURE!
+java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
+
