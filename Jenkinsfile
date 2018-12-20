@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('checkstyle') {
           steps {
-            checkstyle(canComputeNew: true)
+            checkstyle(canComputeNew: true, canResolveRelativePaths: true)
           }
         }
         stage('findbugs') {
