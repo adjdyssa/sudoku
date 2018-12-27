@@ -15,7 +15,7 @@ pipeline {
         }
       }
     }
-    stage('cobertura') {
+    stage('coverage') {
       steps {
         jacoco(buildOverBuild: true)
       }
