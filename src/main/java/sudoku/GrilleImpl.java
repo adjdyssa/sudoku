@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package sudoku;
 
 import java.util.Arrays;
@@ -19,7 +24,7 @@ public class GrilleImpl implements Grille {
     /**
      * Caractere possible a mettre dans la grille.
      *
-     * pour une grille 9x9 : 1..9 jkhklhdd ld jdljdf lfklsfjdls
+     * pour une grille 9x9 : 1..9 
      *
      * pour une grille 16x16: 0..9-a.. f
      */
@@ -83,7 +88,7 @@ public class GrilleImpl implements Grille {
     @Override
 public final void setValue(final int x, final int y, final char value)
         throws IllegalArgumentException {
-
+ 
         try {
 if ((0 < x) && (x < this.getDimension())
         && (0 < y) && (y < this.getDimension())) {
@@ -167,6 +172,44 @@ throws IllegalArgumentException {
         }
         return true;
     }
+
+
+
+  /*
+fonction solution.
+
+@return boolean 
+*/
+    public boolean solution() {
+        for (int row = 0; row < this.getDimension(); row++) {
+         for (int col = 0; col < this.getDimension(); col++) {
+          // recherche de cellule vide
+          if (board[row][col] == EMPTY ) {
+            // essai de nombre possible
+            for (int number = 1; number <= this.getDimension(); number++) {
+              if (this.possible(row, col, (char) number)) {
+                // respect des contrainte de sudoku
+                this.board[row][col] = (char) number;
+                
+                
+                if (solution()) { //rappel de la methode de facon recursive pour trouver la solution
+                  return true;
+                } else { // si ce n'est pas la solution on vide la cellule 
+                 this.board[row][col] = EMPTY ;
+                }
+             }
+            }
+
+            return false; 
+           }
+          }
+         }
+
+         return true; 
+	} 
+    
+    
+
 
 }
 
